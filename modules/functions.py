@@ -24,4 +24,7 @@ def pick_from_menu(menu):
             selection = int(input('>> '))
         except:
             pass
-    return selection
+    list = []
+    for function in menu.values():
+        list.append(function)
+    list[selection - 1]()
