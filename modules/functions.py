@@ -16,13 +16,17 @@ def view_menu(menu):
         print(f'{i + 1}) {items[i]}')
     print('')
 
-def pick_from_menu(menu):
+def pick_from_list(list):
     selection = 0
-    while selection < 1 or selection > len(menu):
+    while selection < 1 or selection > len(list):
         try:
             selection = int(input('>> '))
         except:
             pass
+    return selection
+
+def pick_from_menu(menu):
+    selection = pick_from_list(menu)
     list = []
     for function in menu.values():
         list.append(function)
@@ -31,3 +35,7 @@ def pick_from_menu(menu):
 def ask_for_input():
     print('\nPress ENTER to return back.')
     input()
+
+def loop_through_inventory(inventory):
+    for i in range(len(inventory)):
+        print(f'  {i + 1}) {inventory[i].name} [{inventory[i].value} {currency_symbol}]')

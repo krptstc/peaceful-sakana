@@ -12,7 +12,9 @@ englishLetters = [
 class Fish:
     def __init__(self):
         self.name = 'Unset'
+        self.value = 0
         self.generate_name()
+        self.generate_value()
 
     def generate_name(self):
         firstLetter  = random.randint(0, len(englishLetters) - 1)
@@ -21,3 +23,6 @@ class Fish:
         secondLetter = random.randint(0, len(englishLetters) - 1)
         secondLetter = englishLetters[secondLetter].upper()
         self.name    = firstLetter + middleNumber + secondLetter
+
+    def generate_value(self):
+        self.value = random.randint(1, 10)

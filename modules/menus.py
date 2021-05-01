@@ -10,7 +10,7 @@ def home():
     clear_screen()
     print_game_title()
     view_menu(main_menu)
-    selection = pick_from_menu(main_menu)
+    pick_from_menu(main_menu)
 
 def go_fishing():
     clear_screen()
@@ -20,27 +20,35 @@ def go_fishing():
     time.sleep(waitingTime)
     caughtFish = Fish()
     player.receive_item(caughtFish)
-    print(f'You have caught {caughtFish.name}.')
+    print(f'You have caught {caughtFish.name}. The value of it is {caughtFish.value} {currency_symbol}.')
     ask_for_input()
     home()
 
 def stats():
     clear_screen()
     print_game_title()
-    print(player.name)
-    print(f'\nLevel: {player.level}')
-    print('\nInventory\n')
+    player.view_stats()
+    ask_for_input()
+    home()
+
+def shop():
+    clear_screen()
+    print_game_title()
+    print('Shop\n')
     if len(player.inventory) > 0:
-        for i in range(len(player.inventory)):
-            print(f'  {i + 1}) {player.inventory[i].name}')
+        loop_through_inventory(player.inventory)
+        print('')
+        selection = pick_from_list(player.inventory)
+        player.balance += player.inventory[selection - 1].value
+        player.inventory.pop(selection - 1)
     else:
-        print('  You haven\'t got any items yet!')
+        print('You have no items to sell yet!')
     ask_for_input()
     home()
 
 main_menu = {
     'Go fishing': go_fishing,
-    'Shop': home,
+    'Shop': shop,
     'Statistics': stats,
     'Save and Exit': exit
 }
