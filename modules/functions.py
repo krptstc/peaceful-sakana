@@ -6,13 +6,12 @@ def clear_screen():
     os.system('clear')
 
 def print_game_title():
-    print(f'{game_title} {game_version}')
+    print(f'{game_title} {game_version}\n')
 
 def view_menu(menu):
     items = []
     for key in menu.keys():
         items.append(key)
-    print('')
     for i in range(len(items)):
         print(f'{i + 1}) {items[i]}')
     print('')

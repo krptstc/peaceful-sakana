@@ -1,20 +1,29 @@
+import time
+import random
+
+from modules.settings  import *
 from modules.functions import *
 
-def f1():
-    print('A')
-def f2():
-    print('B')
-def f3():
-    print('C')
-def f4():
-    print('D')
-def f5():
-    print('E')
+def home():
+    clear_screen()
+    print_game_title()
+    view_menu(main_menu)
+    selection = pick_from_menu(main_menu)
+
+def go_fishing():
+    clear_screen()
+    print_game_title()
+    waitingTime = random.randint(fishing_time_min, fishing_time_max)
+    print('You are fishing ...')
+    time.sleep(waitingTime)
+    print('[WIP] Sending you back to the main menu.')
+    time.sleep(3)
+    home()
 
 main_menu = {
-    'Go fishing': f1,
-    'Inventory': f2,
-    'Shop': f3,
-    'Statistics': f4,
-    'Save and Exit': f5
+    'Go fishing': go_fishing,
+    'Inventory': home,
+    'Shop': home,
+    'Statistics': home,
+    'Save and Exit': exit
 }
