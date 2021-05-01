@@ -35,11 +35,16 @@ def shop():
     clear_screen()
     print_game_title()
     print('Shop\n')
+    print('Select an item to sell, type 0 to go back.\n')
     if len(player.inventory) > 0:
         loop_through_inventory(player.inventory)
         print('')
-        selection = pick_from_list(player.inventory)
-        player.balance += player.inventory[selection - 1].value
+        selection = pick_from_list(player.inventory, True)
+        if selection == 0:
+            home()
+        selectedItem = player.inventory[selection - 1]
+        print(f'You have sold {selectedItem.name} for {selectedItem.value} {currency_symbol}.')
+        player.balance += selectedItem.value
         player.inventory.pop(selection - 1)
     else:
         print('You have no items to sell yet!')

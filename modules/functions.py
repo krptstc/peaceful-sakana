@@ -16,11 +16,13 @@ def view_menu(menu):
         print(f'{i + 1}) {items[i]}')
     print('')
 
-def pick_from_list(list):
-    selection = 0
+def pick_from_list(list, canGoBack = False):
+    selection = -1
     while selection < 1 or selection > len(list):
         try:
             selection = int(input('>> '))
+            if selection == 0 and canGoBack:
+                return selection
         except:
             pass
     return selection
