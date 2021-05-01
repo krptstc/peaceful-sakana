@@ -1,4 +1,5 @@
-from modules.settings import *
+from modules.settings  import *
+from modules.functions import *
 
 class Player:
     def __init__(self):

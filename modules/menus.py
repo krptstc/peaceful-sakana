@@ -15,12 +15,15 @@ def home():
 def go_fishing():
     clear_screen()
     print_game_title()
-    waitingTime = random.randint(fishing_time_min, fishing_time_max)
-    print('You are fishing ...')
-    time.sleep(waitingTime)
-    caughtFish = Fish()
-    player.receive_item(caughtFish)
-    print(f'You have caught {caughtFish.name}. The value of it is {caughtFish.value} {currency_symbol}.')
+    if len(player.inventory) < player_inventory_max:
+        waitingTime = random.randint(fishing_time_min, fishing_time_max)
+        print('You are fishing ...')
+        time.sleep(waitingTime)
+        caughtFish = Fish()
+        player.receive_item(caughtFish)
+        print(f'You have caught {caughtFish.name}. The value of it is {caughtFish.value} {currency_symbol}.')
+    else:
+        print(f'Your inventory is full! You can only have {player_inventory_max} items at once!')
     ask_for_input()
     home()
 
