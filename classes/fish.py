@@ -1,6 +1,7 @@
 import random
 
 from modules.settings import *
+from classes.item     import Item
 
 englishLetters = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g',
@@ -9,10 +10,8 @@ englishLetters = [
     'v', 'w', 'x', 'y', 'z'
 ]
 
-class Fish:
+class Fish(Item):
     def __init__(self):
-        self.name = 'Unset'
-        self.value = 0
         self.generate_name()
         self.generate_value()
 
