@@ -3,6 +3,7 @@ import random
 
 from modules.settings  import *
 from modules.functions import *
+from classes.fish      import Fish
 
 def home():
     clear_screen()
@@ -16,6 +17,12 @@ def go_fishing():
     waitingTime = random.randint(fishing_time_min, fishing_time_max)
     print('You are fishing ...')
     time.sleep(waitingTime)
+    fish1 = Fish()
+    fish2 = Fish()
+    fish3 = Fish()
+    print(fish1.name)
+    print(fish2.name)
+    print(fish3.name)
     print('[WIP] Sending you back to the main menu.')
     time.sleep(3)
     home()
