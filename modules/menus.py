@@ -1,7 +1,7 @@
-main_menu = [
-    'Go fishing',
-    'Inventory',
-    'Shop',
-    'Statistics',
-    'Save and Exit'
-]
+main_menu = {
+    'Go fishing': 'a',
+    'Inventory': 'b',
+    'Shop': 'c',
+    'Statistics': 'd',
+    'Save and Exit': 'e'
+}

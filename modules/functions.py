@@ -9,9 +9,12 @@ def print_game_title():
     print(f'{game_title} {game_version}')
 
 def view_menu(menu):
+    items = []
+    for key in menu.keys():
+        items.append(key)
     print('')
-    for i in range(len(menu)):
-        print(f'{i + 1}) {menu[i]}')
+    for i in range(len(items)):
+        print(f'{i + 1}) {items[i]}')
     print('')
 
 def pick_from_menu(menu):
@@ -21,3 +24,4 @@ def pick_from_menu(menu):
             selection = int(input('>> '))
         except:
             pass
+    return selection
