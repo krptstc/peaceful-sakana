@@ -1,5 +1,6 @@
 import time
 import random
+import pickle
 
 from modules.settings  import *
 from modules.functions import *
@@ -27,13 +28,6 @@ def go_fishing():
     ask_for_input()
     home()
 
-def stats():
-    clear_screen()
-    print_game_title()
-    player.view_stats()
-    ask_for_input()
-    home()
-
 def shop():
     clear_screen()
     print_game_title()
@@ -54,9 +48,25 @@ def shop():
     ask_for_input()
     home()
 
+def stats():
+    clear_screen()
+    print_game_title()
+    player.view_stats()
+    ask_for_input()
+    home()
+
+def save_and_exit():
+    savedData = {
+        'player': player
+    }
+    pickleOutput = open('data.pfsakana', 'wb')
+    pickle.dump(savedData, pickleOutput)
+    pickleOutput.close()
+    exit()
+
 main_menu = {
     'Go fishing': go_fishing,
     'Shop': shop,
     'Statistics': stats,
-    'Save and Exit': exit
+    'Save and Exit': save_and_exit
 }
