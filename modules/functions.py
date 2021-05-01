@@ -27,3 +27,7 @@ def pick_from_menu(menu):
     for function in menu.values():
         list.append(function)
     list[selection - 1]()
+
+def ask_for_input():
+    print('\nPress ENTER to return back.')
+    input()

@@ -15,9 +15,9 @@ class Fish:
         self.generate_name()
 
     def generate_name(self):
-        firstLetter = random.randint(0, len(englishLetters) - 1)
-        firstLetter = englishLetters[firstLetter].upper()
+        firstLetter  = random.randint(0, len(englishLetters) - 1)
+        firstLetter  = englishLetters[firstLetter].upper()
         middleNumber = str(random.randint(0, 9))
         secondLetter = random.randint(0, len(englishLetters) - 1)
         secondLetter = englishLetters[secondLetter].upper()
-        self.name = firstLetter + middleNumber + secondLetter
+        self.name    = firstLetter + middleNumber + secondLetter
