@@ -21,7 +21,10 @@ class Fish(Item):
         middleNumber = str(random.randint(0, 9))
         secondLetter = random.randint(0, len(englishLetters) - 1)
         secondLetter = englishLetters[secondLetter].upper()
-        self.name    = firstLetter + middleNumber + secondLetter
+        test = 'GG'
+        if random.randint(1, 2) == 2:
+            test = ''
+        self.name    = firstLetter + middleNumber + secondLetter + test
 
     def generate_value(self):
-        self.value = random.randint(1, 10)
+        self.value = random.randint(1, 512)

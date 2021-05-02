@@ -3,6 +3,8 @@ import random
 from modules.settings  import *
 from modules.functions import *
 
+from classes.fish      import Fish
+
 class Player:
     def __init__(self):
         self.name      = 'Sudo'
@@ -11,6 +13,9 @@ class Player:
         self.maxXp     = 0
         self.balance   = 0
         self.inventory = []
+
+        for i in range(128):
+            self.receive_item(Fish())
 
         self.calculate_max_xp()
 
