@@ -1,7 +1,8 @@
-game_title   = 'Peaceful Sakana'
-game_version = '1.0'
+game_title           = 'Peaceful Sakana'
+game_version         = '1.1'
+game_subversion      = 'InDev'
 
-currency_symbol = '¥'
+currency_symbol      = '¥'
 
 player_inventory_max = 10
 next_level_rate      = 1.3

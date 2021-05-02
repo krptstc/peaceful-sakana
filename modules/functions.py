@@ -6,7 +6,7 @@ def clear_screen():
     os.system('clear')
 
 def print_game_title():
-    print(f'{game_title} {game_version}\n')
+    print(f'{game_title} {game_version} {game_subversion}\n')
 
 def view_menu(menu):
     items = []
